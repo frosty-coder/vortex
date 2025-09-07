@@ -40,7 +40,17 @@ def check_config():
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
+def print_centered_banner():
+    try:
+        width = os.get_terminal_size().columns
+    except OSError:
+        width = 80  # default width
+    banner = print_banner(ret=True)  # get banner as string instead of printing
+    for line in banner.splitlines():
+        print(line.center(width))
+
+# ---- Main ----
 check_config()
 clear_screen()
-print_banner()
+print_centered_banner()
 main_menu()
