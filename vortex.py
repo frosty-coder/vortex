@@ -54,7 +54,7 @@ def invalid_option():
     main_menu()
 
 def input_prompt():
-    choice = input(Fore.YELLOW + "Select an option: ")
+    choice = input(Fore.YELLOW + "zerostack@v1:-/vortex#> ")
     return choice
 
 while True:
