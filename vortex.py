@@ -2,6 +2,8 @@ import os
 from colorama import Fore, init
 from art.main import print_banner
 from art.menu import main_menu
+from tools.maintain import clear_screen, input_prompt
+from phishing.menu import phishing_menu
 init(autoreset=True)
 
 file_name = "config.py"
@@ -37,8 +39,7 @@ def check_config():
             install_requirements()
             create_config(True)
 
-def clear_screen():
-    os.system("cls" if os.name == "nt" else "clear")
+
 
 check_config()
 clear_screen()
@@ -53,9 +54,7 @@ def invalid_option():
     print(Fore.RED + "Invalid option, please try again.")
     main_menu()
 
-def input_prompt():
-    choice = input(Fore.YELLOW + "zerostack@v1:-/vortex#> ")
-    return choice
+
 
 while True:
     user_choice = input_prompt()
