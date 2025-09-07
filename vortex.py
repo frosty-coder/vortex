@@ -1,6 +1,4 @@
 import os
-import sys
-import io
 from colorama import Fore, init
 from art.main import print_banner
 from art.menu import main_menu
@@ -42,25 +40,7 @@ def check_config():
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
-def print_centered_art():
-    # capture the output of print_banner
-    buffer = io.StringIO()
-    sys.stdout = buffer
-    print_banner()
-    sys.stdout = sys.__stdout__  # restore stdout
-
-    banner = buffer.getvalue()
-    
-    try:
-        width = os.get_terminal_size().columns
-    except OSError:
-        width = 80  # fallback width
-    
-    for line in banner.splitlines():
-        print(line.center(width))
-
-# ---- Main ----
 check_config()
 clear_screen()
-print_centered_art()
+print_banner()
 main_menu()
