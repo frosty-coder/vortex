@@ -44,3 +44,34 @@ check_config()
 clear_screen()
 print_banner()
 main_menu()
+
+def exit_program():
+    print(Fore.RED + "Exiting...")
+    exit()
+
+def invalid_option():
+    print(Fore.RED + "Invalid option, please try again.")
+    main_menu()
+
+def input_prompt():
+    choice = input(Fore.YELLOW + "Select an option: ")
+    return choice
+
+while True:
+    user_choice = input_prompt()
+    if user_choice == "1":
+        print(Fore.GREEN + "You selected PHISHING.")
+        # Placeholder for PHISHING functionality
+    elif user_choice == "2":
+        print(Fore.GREEN + "You selected MALWARE KIT.")
+        # Placeholder for MALWARE KIT functionality
+    elif user_choice == "3":
+        print(Fore.GREEN + "You selected SIM / GMAIL hacks.")
+        # Placeholder for SIM / GMAIL hacks functionality
+    elif user_choice == "4":
+        print(Fore.GREEN + "You selected SPY KIT.")
+        # Placeholder for SPY KIT functionality
+    elif user_choice == "99":
+        exit_program()
+    else:
+        invalid_option()
