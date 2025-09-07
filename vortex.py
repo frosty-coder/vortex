@@ -60,7 +60,7 @@ while True:
     user_choice = input_prompt()
     if user_choice == "1":
         print(Fore.GREEN + "You selected PHISHING.")
-        # Placeholder for PHISHING functionality
+        phishing_menu()
     elif user_choice == "2":
         print(Fore.GREEN + "You selected MALWARE KIT.")
         # Placeholder for MALWARE KIT functionality
